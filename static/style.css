@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@1,700;1,900&display=swap');
+
+body { background-color: #1A0507; color: #fff; cursor: none; overflow-x: hidden; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+::selection { background: #722F37; color: white; }
+
+.reveal-up, .reveal-up-large { opacity: 0; transform: translateY(40px); }
+
+.skill-bar { width: 0; }
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+}

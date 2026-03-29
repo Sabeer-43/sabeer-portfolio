@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABEER | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { wine: '#722F37', 'wine-dark': '#1A0507', 'wine-light': '#A64452' },
+                    fontFamily: { display: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-wine-dark text-white selection:bg-wine selection:text-white overflow-x-hidden">
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-wine z-[100] origin-left scale-x-0"></div>
+    <div id="cursor" class="fixed w-4 h-4 bg-wine rounded-full pointer-events-none z-[100] mix-blend-difference hidden md:block"></div>
+    <div id="cursor-follower" class="fixed w-10 h-10 border border-wine/30 rounded-full pointer-events-none z-[99] mix-blend-difference hidden md:block"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-8 py-8 flex justify-between items-center mix-blend-difference">
+        <div class="text-2xl font-display font-bold tracking-tighter magnetic">SABEER<span class="text-wine">.</span></div>
+        <div class="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.4em] uppercase">
+            <a href="#expertise" class="magnetic hover:text-wine transition-colors">Expertise</a>
+            <a href="#skills" class="magnetic hover:text-wine transition-colors">Skills</a>
+            <a href="#work" class="magnetic hover:text-wine transition-colors">Work</a>
+            <a href="#history" class="magnetic hover:text-wine transition-colors">History</a>
+            <a href="#contact" class="magnetic hover:text-wine transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="h-screen flex items-center justify-center relative overflow-hidden">
+            <div id="hero-content" class="text-center px-8">
+                <p class="text-wine font-mono text-xs tracking-[0.6em] uppercase mb-8 reveal-up">Creative Technologist & Strategist</p>
+                <h1 class="text-[22vw] md:text-[18vw] font-display font-bold italic leading-[0.8] tracking-tighter uppercase relative reveal-up-large">SABEER</h1>
+                <div class="h-px bg-wine/30 mt-8 max-w-4xl mx-auto origin-left scale-x-0" id="hero-line"></div>
+            </div>
+        </section>
+
+        <!-- Expertise -->
+        <!-- Expertise Section -->
+<section id="expertise" class="py-40 px-8 md:px-24 bg-[#0a0505] text-white">
+  <!-- Section Header -->
+  <div class="flex flex-col mb-20">
+    <div class="flex items-center gap-4 mb-4">
+      <span class="font-mono text-[#722F37] text-xs tracking-[0.5em]">01</span>
+      <div class="h-px w-12 bg-[#722F37]/30"></div>
+    </div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <h2 class="text-6xl md:text-9xl font-bold tracking-tighter leading-none uppercase">
+        Expertise
+      </h2>
+      <p class="text-white/40 font-mono text-xs tracking-widest uppercase max-w-xs text-right">
+        Multidisciplinary approach to digital and financial ecosystems.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bento Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    
+    <!-- Main Card: Full-Stack Development -->
+    <div class="md:col-span-8 p-12 bg-[#722F37]/5 border border-white/10 rounded-3xl group relative overflow-hidden transition-transform hover:-translate-y-1">
+      <div class="relative z-10">
+        <div class="text-[#722F37] mb-8 transition-transform duration-500 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        </div>
+        <h3 class="text-5xl md:text-7xl font-bold mb-6 italic">Full-Stack Development</h3>
+        <p class="text-xl text-white/50 leading-relaxed max-w-2xl">
+          Architecting scalable digital ecosystems with React, TypeScript, and high-performance backend architectures. 
+          Focused on clean code and exceptional user experiences.
+        </p>
+      </div>
+      <!-- Background Icon Decoration -->
+      <div class="absolute -right-20 -bottom-20 opacity-5 transition-opacity group-hover:opacity-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+      </div>
+    </div>
+
+    <!-- Market Card: Strategy -->
+    <div class="md:col-span-4 p-12 bg-[#722F37]/10 border border-[#722F37]/20 rounded-3xl group transition-transform hover:-translate-y-1">
+      <div class="text-[#722F37] mb-8 transition-transform duration-500 group-hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      </div>
+      <h3 class="text-4xl font-bold mb-6 italic">Market Strategy</h3>
+      <p class="text-lg text-white/50 leading-relaxed mb-8">
+        Quantitative analysis and algorithmic trading strategies for modern financial landscapes.
+      </p>
+      <!-- Mini Chart Visualization -->
+      <div class="relative w-full h-24 bg-white/5 rounded-xl overflow-hidden border border-white/10">
+        <svg class="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
+          <path d="M0 35 L10 30 L20 32 L30 20 L40 25 L50 10 L60 15 L70 5 L80 12 L90 8 L100 15" fill="none" stroke="#722F37" stroke-width="1"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Editing Card: Video Production -->
+    <div class="md:col-span-5 p-12 bg-[#722F37]/5 border border-white/10 rounded-3xl group transition-transform hover:-translate-y-1">
+      <div class="text-[#722F37] mb-8 transition-transform duration-500 group-hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect width="16" height="14" x="2" y="5" rx="2" ry="2"/></svg>
+      </div>
+      <h3 class="text-4xl font-bold mb-6 italic">Video Production</h3>
+      <p class="text-lg text-white/50 leading-relaxed">
+        Cinematic post-production and motion design for high-impact commercial campaigns and digital storytelling.
+      </p>
+    </div>
+
+    <!-- System Card: System Design -->
+    <div class="md:col-span-7 p-12 bg-[#722F37]/5 border border-white/10 rounded-3xl group flex flex-col justify-between transition-transform hover:-translate-y-1">
+      <div>
+        <div class="text-[#722F37] mb-8 transition-transform duration-500 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+        </div>
+        <h3 class="text-4xl font-bold mb-6 italic">System Design</h3>
+        <p class="text-lg text-white/50 leading-relaxed">
+          Architecting clean, efficient, and scalable codebases for complex software solutions and automated workflows.
+        </p>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-4">
+        <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold tracking-widest text-white/30">AWS</span>
+        <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold tracking-widest text-white/30">DOCKER</span>
+        <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold tracking-widest text-white/30">KUBERNETES</span>
+        <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold tracking-widest text-white/30">REDIS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+        <!-- Programming Skills Stats -->
+        <section id="skills" class="py-40 px-8 md:px-24 bg-black/20">
+            <div class="section-header mb-20 reveal-up">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="font-mono text-wine text-xs tracking-[0.5em]">02</span>
+                    <div class="h-px w-12 bg-wine/30"></div>
+                </div>
+                <h2 class="text-6xl md:text-9xl font-display font-bold italic tracking-tighter leading-none">Skills</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="space-y-12">
+                    <div class="skill-item reveal-left">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-display text-2xl italic">React / Next.js</span>
+                            <span class="font-mono text-wine skill-percent" data-target="95">0%</span>
+                        </div>
+                        <div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-wine skill-bar" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item reveal-left">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-display text-2xl italic">TypeScript</span>
+                            <span class="font-mono text-wine skill-percent" data-target="90">0%</span>
+                        </div>
+                        <div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-wine skill-bar" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item reveal-left">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-display text-2xl italic">Python / Flask</span>
+                            <span class="font-mono text-wine skill-percent" data-target="85">0%</span>
+                        </div>
+                        <div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-wine skill-bar" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-12">
+                    <div class="skill-item reveal-right">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-display text-2xl italic">Video Production</span>
+                            <span class="font-mono text-wine skill-percent" data-target="92">0%</span>
+                        </div>
+                        <div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-wine skill-bar" data-width="92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item reveal-right">
+                        <div class="flex justify-between mb-4">
+                            <span class="font-display text-2xl italic">System Design</span>
+                            <span class="font-mono text-wine skill-percent" data-target="88">0%</span>
+                        </div>
+                        <div class="h-1 bg-white/5 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-wine skill-bar" data-width="88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work -->
+        <section id="work" class="py-40 px-8 md:px-24">
+            <div class="section-header mb-20 reveal-up">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="font-mono text-wine text-xs tracking-[0.5em]">03</span>
+                    <div class="h-px w-12 bg-wine/30"></div>
+                </div>
+                <h2 class="text-6xl md:text-9xl font-display font-bold italic tracking-tighter leading-none">Works</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-7 reveal-up group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-2xl mb-8 bg-white/5 relative">
+                        <img src="https://picsum.photos/seed/alpha/1200/1600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-wine/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    </div>
+                    <span class="text-xs font-mono text-wine uppercase tracking-widest">Trading</span>
+                    <h3 class="text-4xl font-display font-bold mt-2 italic">Alpha Bot V2</h3>
+                </div>
+                <div class="md:col-span-5 md:mt-40 reveal-up group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-2xl mb-8 bg-white/5 relative">
+                        <img src="https://picsum.photos/seed/noir/1200/1600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-wine/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    </div>
+                    <span class="text-xs font-mono text-wine uppercase tracking-widest">Production</span>
+                    <h3 class="text-4xl font-display font-bold mt-2 italic">Noir Studio</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section id="history" class="py-40 px-8 md:px-24 bg-wine/[0.02] border-y border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div>
+                    <div class="section-header mb-20 reveal-up">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="font-mono text-wine text-xs tracking-[0.5em]">04</span>
+                            <div class="h-px w-12 bg-wine/30"></div>
+                        </div>
+                        <h2 class="text-6xl md:text-9xl font-display font-bold italic tracking-tighter leading-none">History</h2>
+                    </div>
+                    <div class="sticky top-40">
+                        <p class="text-2xl text-white/40 leading-relaxed max-w-md reveal-up">A journey through technology, finance, and creative storytelling.</p>
+                        <div class="h-px bg-wine/30 mt-12 w-full reveal-up"></div>
+                    </div>
+                </div>
+                <div class="space-y-32">
+                    <div class="reveal-right">
+                        <span class="text-xs font-mono text-wine mb-6 block uppercase tracking-[0.4em]">2023 — 2024</span>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold mb-6 italic">Creative Technologist</h3>
+                        <p class="text-white font-medium mb-8 uppercase tracking-[0.2em] text-sm opacity-60">Nexus Digital</p>
+                        <p class="text-xl text-white/40 leading-relaxed">Architected scalable frontend solutions for enterprise-level SaaS products.</p>
+                    </div>
+                    <div class="reveal-right">
+                        <span class="text-xs font-mono text-wine mb-6 block uppercase tracking-[0.4em]">2021 — 2023</span>
+                        <h3 class="text-5xl md:text-7xl font-display font-bold mb-6 italic">Lead Video Editor</h3>
+                        <p class="text-white font-medium mb-8 uppercase tracking-[0.2em] text-sm opacity-60">Vantage Media</p>
+                        <p class="text-xl text-white/40 leading-relaxed">Directed post-production for high-impact commercial campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-40 px-8 md:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div class="reveal-left">
+                    <h2 class="text-8xl md:text-[10vw] font-display font-bold italic leading-none mb-12">Connect<span class="text-wine">.</span></h2>
+                    <form id="contact-form" class="space-y-12 max-w-md">
+                        <input type="text" id="name" placeholder="YOUR NAME" required class="w-full bg-transparent border-b border-white/10 py-6 focus:border-wine outline-none transition-all font-display text-2xl italic uppercase">
+                        <input type="email" id="email" placeholder="YOUR EMAIL" required class="w-full bg-transparent border-b border-white/10 py-6 focus:border-wine outline-none transition-all font-display text-2xl italic uppercase">
+                        <textarea id="message" placeholder="YOUR MESSAGE" required class="w-full bg-transparent border-b border-white/10 py-6 focus:border-wine outline-none transition-all font-display text-2xl italic min-h-[150px] resize-none uppercase"></textarea>
+                        <button type="submit" id="submit-btn" class="magnetic w-full py-8 bg-wine text-white font-bold tracking-[0.4em] uppercase text-xs rounded-full">Send Transmission</button>
+                    </form>
+                </div>
+                <div class="reveal-right">
+                    <h3 class="text-4xl font-display font-bold italic mb-12">Message Board</h3>
+                    <div id="message-board" class="space-y-8 max-h-[700px] overflow-y-auto pr-4 no-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="success-popup" class="fixed bottom-12 left-1/2 -translate-x-1/2 z-[100] opacity-0 translate-y-10 transition-all duration-500 pointer-events-none">
+        <div class="bg-wine text-white px-12 py-6 rounded-full shadow-2xl border border-white/20 backdrop-blur-xl">
+            <h4 class="text-xl font-display font-bold italic tracking-widest uppercase">Transmission Received</h4>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
